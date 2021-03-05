@@ -37,6 +37,22 @@ fun testaList() {
         )
     )
 
+    livros.add(
+        Livro(
+            titulo = "Hobbit",
+            autor = "Tolkien",
+            anoPublicacao = 1970
+        )
+    )
+
+    livros.add(
+        Livro(
+            titulo = "O Retorno do Rei",
+            autor = "Tolkien",
+            anoPublicacao = 1960
+        )
+    )
+
     livros.imprimeFormatado()
 
     livros.remove(livro2)
@@ -46,10 +62,32 @@ fun testaList() {
     livrosOrdenadosPorAnoPublicacao.imprimeFormatado()
 
     livros.sortedBy { livro -> livro.autor }.imprimeFormatado()
+
+    /*
+    Função filter{} recebe uma expressão boolean
+    Retorna uma lista com os valores que satisfazerem a condição
+    Nesse exemplo será uma lista com os livros do autor Tolkien
+     */
+    livros.filter { it.autor == "Tolkien" }
+        .sortedBy { it.anoPublicacao }
+        .imprimeFormatado()
+
+    /*
+    Usando filter{} para filtrar o autor
+    Em seguida foi usado o sortedBy{} para ordenar por ano de publicação
+    E por último foi usado o map{} para criar uma nova lista com apenas o titulo dos livros
+    Os titulos serão apenas do autor informado no filter e já estarão ordenados por ano de publicação
+     */
+    val titulos: List<String> = livros.filter { it.autor == "Tolkien" }
+        .sortedBy { it.anoPublicacao }
+        .map { it.titulo }
+
+    println(titulos)
+
 }
 
-fun List<Livro>.imprimeFormatado(){
-    val livrosFormatados = this.joinToString(separator = "\n",) { livro ->
+fun List<Livro>.imprimeFormatado() {
+    val livrosFormatados = this.joinToString(separator = "\n") { livro ->
         " - ${livro.titulo} do Autor(a) ${livro.autor}"
     }
     println(" #####Lista de Livros##### \n$livrosFormatados")
