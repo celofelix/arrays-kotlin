@@ -1,6 +1,6 @@
 package br.com.alura.lista
 
-fun testaListaNula() {
+fun testaListaComMembroNulo() {
 
     val livro1 = Livro(
         titulo = "Grande Sertão: Veredas",
@@ -12,12 +12,14 @@ fun testaListaNula() {
         titulo = "Minha vida de menina",
         autor = "Helena Morley",
         anoPublicacao = 1942,
+        editora = "Editora A"
     )
 
     val livro3 = Livro(
         titulo = "Memórias Póstumas de Brás Cubas",
         autor = "Machado de Assis",
-        anoPublicacao = 1881
+        anoPublicacao = 1881,
+        editora = "Editora B"
     )
 
     val livro4 = Livro(
@@ -27,11 +29,11 @@ fun testaListaNula() {
         editora = "Editora B"
     )
 
-    val livrosNulos: MutableList<Livro?> = mutableListOf(
-        livro1, null, livro2, null, livro3, null, livro4, null
-    )
+    val livros: MutableList<Livro> = mutableListOf(livro1, livro2, livro3, livro4)
+    livros.groupBy { it.editora ?: "Editora não informada" }
+        .forEach{(editora: String?, livros: List<Livro>) ->
+            println("$editora: ${livros.joinToString { it.titulo }}")
+        }
 
-    livrosNulos.imprimeFormatado()
+
 }
-
-
