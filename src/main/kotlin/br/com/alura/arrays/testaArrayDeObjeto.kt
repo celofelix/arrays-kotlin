@@ -26,6 +26,18 @@ fun testaArrayDeObjeto() {
     val gastoInicial = salariosComAumento.somatoria()
     println("Gasto inicial após aumento dos salários $gastoInicial")
 
+    val meses = "6".toBigDecimal()
+
+    /*
+    A função fold() tem o resultado bem parecido com a função reduce{}
+    A diferença entre elas é que no fold podemos passar um valor inicial para o acumulador
+    Nesse exemplo o acumulador já inicia com o valor da variavel gastoInicial
+    O retorno do fold() também é apenas de 1 valor, nesse caso 1 tipo BigDecial
+     */
+    val gastoPorMes = salariosComAumento.fold(gastoInicial) { acumulador, valorSalario ->
+        acumulador + (valorSalario * meses).setScale(2, RoundingMode.UP)
+    }
+    println("Gasto total após 6 meses: $gastoPorMes")
 }
 
 fun calculaAumento(salario: BigDecimal, aumento: BigDecimal) =
