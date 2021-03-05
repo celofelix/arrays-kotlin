@@ -1,6 +1,7 @@
 package br.com.alura.lista
 
 fun testaList() {
+
     val livro1 = Livro(
         titulo = "Grande Sertão: Veredas",
         autor = "João Guimarães Rosa",
