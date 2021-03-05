@@ -2,34 +2,18 @@ package br.com.alura.arrays
 
 fun main() {
 
-    val idades = IntArray(5)
-    idades[0] = 25
-    idades[1] = 19
-    idades[2] = 33
-    idades[3] = 20
-    idades[4] = 55
+    val salarios: DoubleArray = doubleArrayOf(1500.50, 2300.0, 5000.0, 8000.0, 10000.0)
 
-    var idadeMaior = 0
-    for (idade in idades) {
-        if(idade > idadeMaior)
-            idadeMaior = idade
+    val aumento = 1.1
+    for(indice in salarios.indices) {
+        salarios[indice] = salarios[indice] * aumento
     }
-    println("Maior idade com IntArray e For: $idadeMaior")
+    println(salarios.contentToString())
 
-    var idadeMenor = Int.MAX_VALUE
-    idades.forEach { idade ->
-        if(idade < idadeMenor) {
-            idadeMenor = idade
-        }
+    salarios.forEachIndexed { i, salario ->
+        salarios[i] = salario * aumento
     }
-    println("Menor idade com IntArray e Forach: $idadeMenor")
 
-    val idades2 = intArrayOf(30,72,27,33,55)
-    var maiorIdade = 0
-    idades2.forEach { idade ->
-        if(idade > maiorIdade) {
-            maiorIdade = idade
-        }
-    }
-    println("Maior idade com intArrayOf e ForEach: $maiorIdade")
+    println(salarios.contentToString())
 }
+
