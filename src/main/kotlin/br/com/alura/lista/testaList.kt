@@ -37,9 +37,16 @@ fun testaList() {
         )
     )
 
-    println(livros)
+    livros.imprimeFormatado()
 
     livros.remove(livro2)
 
-    println(livros)
+    livros.imprimeFormatado()
+}
+
+fun MutableList<Livro>.imprimeFormatado(){
+    val livrosFormatados = this.joinToString(separator = "\n",) { livro ->
+        " - ${livro.titulo} do Autor(a) ${livro.autor}"
+    }
+    println(" #####Lista de Livros##### \n$livrosFormatados")
 }
