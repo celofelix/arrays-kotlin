@@ -1,4 +1,4 @@
-package br.com.alura.arrays
+package br.com.alura
 
 import java.math.BigDecimal
 

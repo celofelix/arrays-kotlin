@@ -1,4 +1,4 @@
-package br.com.alura.arrays
+package br.com.alura
 
 fun testaFuncoesAgregadoras() {
     // Função maxOrNull() de um Array serve para pegar o maior valor de um Array

@@ -1,4 +1,4 @@
-package br.com.alura.arrays
+package br.com.alura
 
 import java.math.BigDecimal
 import java.math.RoundingMode
@@ -39,6 +39,10 @@ fun testaArrayDeObjeto() {
     }
     println("Gasto total após 6 meses: $gastoPorMes")
 
+    /*
+    Função sorted() ordena um array do menor para o maior
+    Função takeLast() pega os 3 últimos elementos de um array
+     */
     val tresMaioresSalarios = salariosComAumento.sorted().takeLast(3).toTypedArray()
     val mediaTresMaioresSalarios = tresMaioresSalarios.media()
     println("Media dos 3 maiores sálarios: $mediaTresMaioresSalarios")
@@ -46,8 +50,6 @@ fun testaArrayDeObjeto() {
     val tresMenoresSalarios = salariosComAumento.sorted().take(3).toTypedArray()
     val mediaTresMenoresSalarios = tresMenoresSalarios.media()
     println("Media dos 3 menores sálarios: $mediaTresMenoresSalarios")
-
-
 }
 
 fun calculaAumento(salario: BigDecimal, aumento: BigDecimal) =
