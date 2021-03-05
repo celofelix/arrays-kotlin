@@ -1,11 +1,10 @@
 package br.com.alura
 
-import br.com.alura.lista.Livro
-import br.com.alura.lista.testaList
+import br.com.alura.lista.testaListaNula
 
 fun main() {
 
-    testaList()
+    testaListaNula()
 
 }
 

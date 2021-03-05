@@ -86,9 +86,4 @@ fun testaList() {
 
 }
 
-fun List<Livro>.imprimeFormatado() {
-    val livrosFormatados = this.joinToString(separator = "\n") { livro ->
-        " - ${livro.titulo} do Autor(a) ${livro.autor}"
-    }
-    println(" #####Lista de Livros##### \n$livrosFormatados")
-}
+
