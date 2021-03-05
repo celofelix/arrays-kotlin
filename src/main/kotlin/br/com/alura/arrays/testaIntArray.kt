@@ -14,7 +14,7 @@ fun testaIntArray() {
         if (idade > idadeMaior)
             idadeMaior = idade
     }
-    println("Maior idade com IntArray e For: $idadeMaior")
+    println("Maior idade com IntArray e For: $idadeMaior") 
 
     var idadeMenor = Int.MAX_VALUE
     idades.forEach { idade ->
